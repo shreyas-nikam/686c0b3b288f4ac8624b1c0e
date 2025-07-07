@@ -1,4 +1,3 @@
-
 import streamlit as st
 import plotly.express as px
 import pandas as pd
@@ -54,7 +53,7 @@ def run_metric_comparison_page(df):
     for metric in metrics_to_display:
         st.markdown(f"#### {metric} Performance")
         if metric == 'RE':
-            st.markdown(r"**Rotation Error (RE):** Angular difference in degrees between predicted and ground-truth rotations. A lower RE indicates higher accuracy. Formula: $RE = rccos\left(rac{	ext{trace}(R_{pred}^T R_{gt}) - 1}{2}ight) 	imes rac{180}{\pi}$")
+            st.markdown(r"**Rotation Error (RE):** Angular difference in degrees between predicted and ground-truth rotations. A lower RE indicates higher accuracy. Formula: $RE = \arccos\left(\frac{\text{trace}(R_{pred}^T R_{gt}) - 1}{2}\right) \times \frac{180}{\pi}$")
         elif metric == 'TE':
             st.markdown(r"**Translation Error (TE):** Euclidean distance in centimeters between predicted and ground-truth translations. A lower TE indicates higher accuracy. Formula: $TE = \| t_{pred} - t_{gt} \|_2$")
         elif metric == 'Recall@5°':
